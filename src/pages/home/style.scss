@@ -1,0 +1,24 @@
+.carousalSection {
+    position: relative;
+    margin-bottom: 70px;
+
+
+    & > .contentWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .carousalTitle {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: normal;
+
+        &:hover, &:active {
+            color: var(--pink);
+            cursor: pointer;
+        }
+    }
+    
+}

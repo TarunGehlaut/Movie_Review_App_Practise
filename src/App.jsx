@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import RouterConfig from "./routerConfig/RouterConfig";
 
-import { getAPIConfiguration } from "./store/homeSlice";
+import { getAPIConfiguration, getGenres } from "./store/homeSlice";
 import { fetchDataFromApi } from "./utils/api";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     ApiTesting();
+    genresCall();
   }, []);
 
   const ApiTesting = () => {
@@ -27,6 +28,24 @@ function App() {
 
       dispatch(getAPIConfiguration(url));
     });
+  };
+
+  const genresCall = async () => {
+    let promises = [];
+    let endPoints = ["movie", "tv"];
+    let allGenres = {};
+
+    endPoints.forEach((url) => {
+      promises.push(fetchDataFromApi(`/genre/${url}/list`));
+    });
+
+    const data = await Promise.all(promises);
+
+    data?.map(({ genres }) => {
+      return genres?.map((item) => (allGenres[item.id] = item));
+    });
+
+    dispatch(getGenres(allGenres));
   };
 
   return (

@@ -12,7 +12,7 @@ import HeaderComponent from "../components/Header/Header";
 const RouterConfig = () => {
   return (
     <BrowserRouter>
-      {/* <HeaderComponent /> */}
+      <HeaderComponent />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
@@ -20,7 +20,7 @@ const RouterConfig = () => {
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {/* <FooterComponent /> */}
+      <FooterComponent />
     </BrowserRouter>
   );
 };
