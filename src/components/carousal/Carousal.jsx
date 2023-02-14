@@ -16,7 +16,7 @@ import Img from "../lazyLoadingImage/Img";
 import Genres from "../genres/Genres";
 import "./style.scss";
 
-const Carousal = ({ data, loading }) => {
+const Carousal = ({ data, loading, endPoint }) => {
   const carousalContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
@@ -66,7 +66,9 @@ const Carousal = ({ data, loading }) => {
                 : PosterFallback;
               return (
                 <div
-                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                  onClick={() =>
+                    navigate(`/${item.media_type || endPoint}/${item.id}`)
+                  }
                   key={item.id}
                   className="carouselItem"
                 >
