@@ -173,15 +173,15 @@ const DetailsBanner = ({ video, crew }) => {
       ) : (
         <div className="detailsBannerSkeleton">
           <ContentWrapper>
-            <div className="left skelton"></div>
+            <div className="left skeleton"></div>
             <div className="right">
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
-              <div className="row skelton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
+              <div className="row skeleton"></div>
             </div>
           </ContentWrapper>
         </div>
